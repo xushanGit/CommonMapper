@@ -15,7 +15,7 @@
 </bean>
 ```
 2. 使用改写后的扫描器(org 改成tk 即可)
-```
+```java
  <bean class="tk.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="mapper"></property>
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
@@ -25,7 +25,7 @@
 Criteria 不依赖具体的SQL语句而是使用对象描述查询关系，所以Criteria可以适应多种数据库。
 在通用mapper中可以使用下列方式创建Criteria 查询。
 **查询参考**
-```
+```java
 Example example = new Example(User.class);
 Example.Criteria criteria = example.createCriteria();
 criteria.andEqualTo("name", "w");
@@ -52,13 +52,13 @@ public class User {
 }
 ```
 **mapper接口**
-```
+```java
 public interface UserMapper extends BaseMapper<User>,SelectByExampleMapper<User> {
     public List<User> selectByName(@Param("name") String name);
 }
 ```
 **查询参考**
-```
+```java
  @Test
     public void testCRUD() throws Exception {
         UserMapper mapper = getUserMapper();
