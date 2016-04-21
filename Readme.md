@@ -1,4 +1,6 @@
 ## 通用Mapper 简单教程 
+### Mapper 项目地址: [http://git.oschina.net/free/Mapper]
+### 本教程代码地址: [https://github.com/oaksharks/CommonMapper]
 ### I. 使用mybatis 原生方式
 1. 在SessionFactory 中配置 mapper 的xml 文件位置（xml 与 java文件最好不要放到同一目录）。在mybatis的xml
 中已经指定namespace，也就是说只要指定xml文件mybatis 就能生成代理类。扫描器一个很大的作用就是生成
